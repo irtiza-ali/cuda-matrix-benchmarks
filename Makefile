@@ -10,6 +10,9 @@ matrix_benchmark: matrix_math_opt.cu
 
 naive_benchmark: matrix_math_naive.cu
 	$(CXX) $(CXXFLAGS) matrix_math_naive.cu -o naive_benchmark
+	
+fp_benchmark: fp_speed_benchmark.cu
+	nvcc -O3 -arch=sm_75 -lcublas fp_speed_benchmark.cu -o fp_speed_benchmark
 
 clean:
-	rm -f matrix_benchmark naive_benchmark results.csv *.png
+	rm -f matrix_benchmark naive_benchmark fp_speed_benchmark results.csv *.png
