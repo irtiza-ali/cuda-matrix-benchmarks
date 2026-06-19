@@ -9,7 +9,7 @@ matrix_benchmark: matrix_math_opt.cu
 	$(CXX) $(CXXFLAGS) $(INCLUDES) matrix_math_opt.cu -o matrix_benchmark $(LIBS)
 
 naive_benchmark: matrix_math_naive.cu
-	$(CXX) $(CXXFLAGS) matrix_math.cu -o naive_benchmark
+	$(CXX) $(CXXFLAGS) matrix_math_naive.cu -o naive_benchmark
 
 clean:
 	rm -f matrix_benchmark naive_benchmark results.csv *.png
